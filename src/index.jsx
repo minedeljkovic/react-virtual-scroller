@@ -239,13 +239,14 @@ class Scroller extends Component {
 
 			minScrollStep = props.minHorizontalScrollStep || minScrollStep
 		} else {
-			minScrollStep = props.minVerticalScrollStep   || minScrollStep
+            if (delta !== 0)
+                minScrollStep = props.minVerticalScrollStep   || minScrollStep
 		}
 
 		if (typeof props.interceptWheelScroll == 'function'){
 			delta = props.interceptWheelScroll(delta, normalizedEvent, event)
 		} else if (minScrollStep){
-			if (ABS(delta) < minScrollStep){
+			if (ABS(delta) < minScrollStep && delta !== 0){
 				delta = signum(delta) * minScrollStep
 			}
 		}
@@ -256,9 +257,11 @@ class Scroller extends Component {
         	props.preventDefaultHorizontal && preventDefault(event)
 
 	    } else {
-		    this.verticalScrollAt(scrollTop + delta, event)
+            if (delta !== 0) {
+                this.verticalScrollAt(scrollTop + delta, event)
 
-		    props.preventDefaultVertical && preventDefault(event)
+                props.preventDefaultVertical && preventDefault(event)
+            }
 		}
 	}
 
