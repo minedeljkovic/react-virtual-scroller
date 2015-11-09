@@ -1,6 +1,6 @@
 {
   "name": "react-virtual-scroller",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "A virtual scroller container for React",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "build": "npm run dist && npm run dist.min && npm run lib && npm run build-style",
     "dist": "webpack  --progress --colors --config dist.config.js",
     "wdist": "webpack --watch --progress --colors --config dist.config.js",
-    "dist.min": "webpack  --progress --colors --optimize-minimize --optimize-occurence-order --optimize-dedupe --config dist.min.config.js",
+    "dist.min": "webpack  --progress --colors -p --config dist.min.config.js",
     "lib": "gulp",
     "wlib": "gulp watch"
   },
@@ -34,28 +34,29 @@
   },
   "homepage": "https://github.com/zippyui/react-virtual-scroller",
   "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
     "babel": "^5.1.13",
     "babel-core": "^5.1.13",
     "babel-loader": "^5.0.0",
+    "css-loader": "^0.12.0",
+    "extract-text-webpack-plugin": "^0.7.0",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
-    "webpack": "^1.8.10",
-    "webpack-dev-server": "^1.8.2",
     "style-loader": "^0.12.1",
-    "css-loader": "^0.12.0",
     "stylus-loader": "^1.1.0",
-    "extract-text-webpack-plugin": "^0.7.0"
+    "webpack": "^1.8.10",
+    "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
     "drag-helper": "^1.2.3",
     "has-touch": "^1.0.1",
-    "object-assign": "^2.0.0",
+    "object-assign": "^4.0.1",
     "react-class": "^1.1.2",
     "react-load-mask": "^1.0.1",
-    "react-style-normalizer": "^1.2.7",
-    "stylus-normalizer": "^1.0.1"
+    "react-style-normalizer": "^1.2.7"
   },
   "peerDependencies": {
-    "react": ">=0.13.0"
+    "react": ">=0.14.0",
+    "react-dom": ">=0.14.0"
   }
 }
