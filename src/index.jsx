@@ -279,6 +279,7 @@ class Scroller extends Component {
   }
 
   fixHorizontalScrollbar() {
+    if (this.isUnmounted) return;
 
     const thisNode = findDOMNode(this)
 
@@ -309,6 +310,8 @@ class Scroller extends Component {
     delete this.horizontalScrollerNode
     delete this.horizontalScrollbarNode
     delete this.verticalScrollbarNode
+
+    this.isUnmounted = true;
   }
 
   ////////////////////////////////////////////////
