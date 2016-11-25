@@ -52,11 +52,11 @@
     "has-touch": "^1.0.1",
     "object-assign": "^4.0.1",
     "react-class": "^1.1.2",
-    "react-load-mask": "^1.0.1",
+    "react-load-mask": "https://github.com/minedeljkovic/react-load-mask/tarball/70cf4d527599d943f8af3994c73c610446f49e98",
     "react-style-normalizer": "^1.2.7"
   },
   "peerDependencies": {
-    "react": ">=0.14.0",
-    "react-dom": ">=0.14.0"
+    "react": ">=0.14.0 || >=15.0.0",
+    "react-dom": ">=0.14.0 || >=15.0.0"
   }
 }
